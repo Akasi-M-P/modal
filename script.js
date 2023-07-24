@@ -26,3 +26,19 @@ closeModal.addEventListener('click', closeModalWindow);
 
 // Adding click event listener to the overlay to close the modal if clicked outside the modal
 overlay.addEventListener('click', closeModalWindow);
+
+
+// Event listener for keydown events on the whole document
+document.addEventListener('keydown', function (e) {
+  // The function will be executed whenever a key is pressed on the keyboard
+
+  // 'e' represents the event object that contains information about the key event
+
+  // We are checking if the pressed key is 'Escape' (the 'Escape' key) and if the modal is currently visible
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    // If the 'Escape' key is pressed and the modal is visible (not hidden), perform the following action
+
+    // Call the 'closeModalWindow' function to close the modal and hide the overlay
+    closeModalWindow();
+  }
+});
